@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.postItem{
+  display: flex;
+  border: solid 2px blue;
+}
+
+.getPosts{
+  text-align: justify;
+}
