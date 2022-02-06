@@ -6,7 +6,7 @@ const TodoForm = ({ value, updateText, handleAction }) => {
                 value={value}
                 onChange={(event) => updateText(event.target.value)}
             />
-            <button onClick={handleAction}>Add to do</button>
+            <button onClick={handleAction}>Add to_do</button>
         </label>
     );
 };

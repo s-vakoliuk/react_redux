@@ -10,14 +10,13 @@ const TodoItem = ({id, text, completed}) => {
 
     return (
         <div className={css.TodoItem}>
-            To_do list
             <input
                 type='checkbox'
                 checked={completed}
                 onChange = {()=>dispatch(toggleCompletedTodo({id}))}
             />
             <div>{text}</div>
-            <button onClick={()=>dispatch(removeTodo(id))}>Delete</button>
+            <button onClick={()=>dispatch(removeTodo({id}))}>Delete</button>
         </div>
     );
 };

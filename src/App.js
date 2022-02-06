@@ -12,9 +12,10 @@ function App() {
     const dispatch=useDispatch();
 
     const handleAction = () => {
-    if(text.trim().length) {
-      dispatch(addTodo({text}));
-      setText('');
+        if (text.trim().length) {
+            dispatch(addTodo({text}));
+            setText('');
+        }
     }
     return (
         <div className={css.App}>
