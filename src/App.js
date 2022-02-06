@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 
 import css from './App.module.css';
 import PostList from "./components/PostList";
@@ -8,12 +8,9 @@ import {useDispatch} from "react-redux";
 function App() {
     const dispatch=useDispatch();
 
-    useEffect(() => {
-        dispatch(getPosts());
-        }, [dispatch]);
-
     return (
         <div className={css.App}>
+            <h3>Натисни на кнопку щоб отримати публікації</h3>
             <button
                 type='submit'
                 onClick={()=>dispatch(getPosts())}
@@ -21,7 +18,7 @@ function App() {
                 Get Posts
             </button>
 
-            <PostList />
+            <PostList/>
     </div>
   );
 }

@@ -5,15 +5,13 @@ import css from '../App.module.css';
 import PostItem from "./PostItem";
 
 const PostList = () => {
-    const posts = useSelector(state => {
-        console.log("useSelector rerendering");
-        return state.posts;
-    });
+
+    const posts = useSelector(state => state.posts);
 
     return (
         <div className={css.getPosts}>
             {posts.map((post) => (
-                <PostItem key={post.id} {...post}/>
+                <PostItem key={post.id} post={post}/>
             ))}
         </div>
     );
