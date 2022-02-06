@@ -15,11 +15,6 @@
   margin: 10px;
 }
 
-input:checked + span {
+.TodoInput:checked + .TodoInputText {
   text-decoration: line-through;
-}
-
-span:last-child {
-  color: red;
-  cursor: pointer;
 }
