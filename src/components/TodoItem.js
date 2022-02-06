@@ -1,30 +1,23 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 
-import  {toggleCompletedTodo, removeTodo} from '../slices/todoSlice'
+import  {toggleCompletedTodo, removeTodo} from '../store/todoSlice'
 
-const TodoItem = ({todo}) => {
-    const dispatch=useDispatch()
+import css from '../App.module.css';
 
-    const toggleTodoHandler=(id)=>{
-        dispatch(toggleCompletedTodo(id))
-    }
-
-    const removeTodoHandler=(id)=>{
-        dispatch(removeTodo(id))
-    }
+const TodoItem = ({id, text, completed}) => {
+    const dispatch=useDispatch();
 
     return (
-        <div>
+        <div className={css.TodoItem}>
             To_do list
             <input
-                type="checkbox"
-                id="scales"
-                name="scales"
-                onClick = {()=>toggleTodoHandler(todo.id)}
+                type='checkbox'
+                checked={completed}
+                onChange = {()=>dispatch(toggleCompletedTodo({id}))}
             />
-            <div>{todo.text}</div>
-            <button onClick={()=>removeTodoHandler(todo.id)}>Delete</button>
+            <div>{text}</div>
+            <button onClick={()=>dispatch(removeTodo(id))}>Delete</button>
         </div>
     );
 };

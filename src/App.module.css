@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+.TodoList {
+  list-style: none;
+}
+
+.TodoItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input:checked + span {
+  text-decoration: line-through;
+}
+
+span:last-child {
+  color: red;
+  cursor: pointer;
+}
