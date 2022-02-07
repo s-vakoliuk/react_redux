@@ -5,6 +5,7 @@
 .postItem{
   display: flex;
   border: solid 2px blue;
+  margin: 10px;
 }
 
 .getPosts{

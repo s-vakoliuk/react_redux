@@ -5,12 +5,12 @@ export const getPosts=createAsyncThunk(
     'posts/getPosts',
     async function (_,{rejectWithValue}){
         try {
-            const response=await postService.getAll();
-            console.log(response);
-            if (!response.ok) {
-                throw new Error('Server Error!');
-            }
-            return response;
+            const data=await postService.getAll();
+            console.log(data);
+            // if (!data.ok) {
+            //     throw new Error('Server Error!');
+            // }
+            return data;
         } catch (error){
             return rejectWithValue(error.message);
         }
@@ -35,6 +35,7 @@ const postSlice = createSlice({
         },
         [getPosts.pending]:(state)=>{
             state.status='loading'
+            state.error=null
         },
         [getPosts.rejected]:(state,action)=>{
             state.status = 'rejected';
@@ -43,6 +44,8 @@ const postSlice = createSlice({
     },
 });
 
+const postReducer=postSlice.reducer;
+
 export const {setPosts}=postSlice.actions;
 
-export default postSlice.reducer;
+export default postReducer;

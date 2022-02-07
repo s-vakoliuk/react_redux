@@ -2,10 +2,12 @@ import React from 'react';
 
 import css from '../App.module.css';
 
-const PostItem = ({posts}) => {
+const PostItem = ({post}) => {
+    const {userId, id, title}=post
     return (
         <div className={css.postItem}>
-            {posts.userId} - {posts.id} - {posts.title}
+            {userId} - {id} - {title}
+            {/*{JSON.stringify(post)};*/}
         </div>
     );
 };
